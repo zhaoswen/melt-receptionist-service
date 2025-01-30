@@ -1,0 +1,34 @@
+server:
+  port: 8988
+  servlet:
+    context-path: /api
+
+spring:
+  datasource:
+    # mysql 数据库配置
+    url: jdbc:mysql://127.0.0.1:3306/receptionist?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # h2 数据库配置
+    # url: jdbc:h2:${engine.h2_path}
+    # username: root
+    # password: root
+    # driver-class-name: org.h2.Driver
+
+mybatis-plus:
+  global-config:
+    banner: false
+    enable-sql-runner: true
+  configuration:
+    # 开启驼峰转下划线
+    map-underscore-to-camel-case: true
+
+# 引擎配置
+engine:
+  # 存储版本库目录（存储库的文件都会存储到这个位置，比如库文件等）
+  version_path: 'E:\\rece'
+  # 缓存文件目录
+  cache_path: '/Users/eyresimpson/Receptionist/cache/'
+  # H2 数据库存储位置
+  h2_path: '/Users/eyresimpson/Receptionist/h2/receptionist.db'
