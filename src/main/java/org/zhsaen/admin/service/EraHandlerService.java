@@ -1,6 +1,6 @@
-package cn.tineaine.receptionistservice.service;
+package org.zhsaen.admin.service;
 
-import cn.tineaine.receptionistservice.entity.EraHandler;
+import org.zhsaen.admin.entity.EraHandler;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

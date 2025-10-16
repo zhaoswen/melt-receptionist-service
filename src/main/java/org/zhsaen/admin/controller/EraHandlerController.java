@@ -1,9 +1,9 @@
-package cn.tineaine.receptionistservice.controller;
+package org.zhsaen.admin.controller;
 
 
-import cn.tineaine.receptionistservice.entity.EraHandler;
-import cn.tineaine.receptionistservice.entity.Response;
-import cn.tineaine.receptionistservice.service.EraHandlerService;
+import org.zhsaen.admin.entity.EraHandler;
+import org.zhsaen.admin.entity.Response;
+import org.zhsaen.admin.service.EraHandlerService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;

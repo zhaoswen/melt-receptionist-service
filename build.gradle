@@ -24,21 +24,29 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    // Sa-Token
+    implementation 'cn.dev33:sa-token-spring-boot3-starter:1.44.0'
     // MyBatis Plus
     implementation 'com.baomidou:mybatis-plus-spring-boot3-starter:3.5.9'
     // Hutool
-    implementation 'cn.hutool:hutool-all:5.8.16'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'cn.hutool:hutool-all:5.8.40'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    // Swagger ui
+    implementation 'org.springdoc:springdoc-openapi-ui:1.7.0'
+    // H2 支持
     runtimeOnly 'com.h2database:h2'
+    // MySQL 支持
     runtimeOnly 'com.mysql:mysql-connector-j'
+    // Lombok
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    // Spring Security Crypto (for BCrypt)
+    implementation 'org.springframework.security:spring-security-crypto:6.3.0'
 }
 
 tasks.named('test') {

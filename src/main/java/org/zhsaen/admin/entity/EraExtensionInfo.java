@@ -1,4 +1,4 @@
-package cn.tineaine.receptionistservice.entity;
+package org.zhsaen.admin.entity;
 
 import lombok.Data;
 

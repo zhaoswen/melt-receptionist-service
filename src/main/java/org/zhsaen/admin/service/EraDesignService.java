@@ -1,6 +1,6 @@
-package cn.tineaine.receptionistservice.service;
+package org.zhsaen.admin.service;
 
-import cn.tineaine.receptionistservice.entity.EraExtension;
+import org.zhsaen.admin.entity.EraExtension;
 
 public interface EraDesignService {
     EraExtension getExtensionConfig(String extensionId);

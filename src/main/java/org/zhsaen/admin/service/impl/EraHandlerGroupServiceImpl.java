@@ -1,8 +1,8 @@
-package cn.tineaine.receptionistservice.service.impl;
+package org.zhsaen.admin.service.impl;
 
-import cn.tineaine.receptionistservice.dao.EraHandlerGroupDao;
-import cn.tineaine.receptionistservice.entity.EraHandlerGroup;
-import cn.tineaine.receptionistservice.service.EraHandlerGroupService;
+import org.zhsaen.admin.dao.EraHandlerGroupDao;
+import org.zhsaen.admin.entity.EraHandlerGroup;
+import org.zhsaen.admin.service.EraHandlerGroupService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

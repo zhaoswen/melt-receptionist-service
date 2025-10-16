@@ -1,6 +1,6 @@
-package cn.tineaine.receptionistservice.dao;
+package org.zhsaen.admin.dao;
 
-import cn.tineaine.receptionistservice.entity.EraHandler;
+import org.zhsaen.admin.entity.EraHandler;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 

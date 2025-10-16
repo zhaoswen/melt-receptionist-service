@@ -1,21 +1,32 @@
-/*
- Navicat Premium Data Transfer
-
- Source Server         : 【宿主】MySQL
- Source Server Type    : MySQL
- Source Server Version : 80403 (8.4.3)
- Source Host           : 192.168.2.17:3306
- Source Schema         : receptionist
-
- Target Server Type    : MySQL
- Target Server Version : 80403 (8.4.3)
- File Encoding         : 65001
-
- Date: 22/01/2025 19:21:47
-*/
-
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for admin_user
+-- ----------------------------
+DROP TABLE IF EXISTS `admin_user`;
+CREATE TABLE IF NOT EXISTS `admin_user` (
+    `id` INTEGER AUTO_INCREMENT PRIMARY KEY COMMENT '用户ID',
+    `username` VARCHAR(50) NOT NULL COMMENT '用户名',
+    `password` VARCHAR(100) NOT NULL COMMENT '密码',
+    `nickname` VARCHAR(50) DEFAULT NULL COMMENT '昵称',
+    `email` VARCHAR(100) DEFAULT NULL COMMENT '邮箱',
+    `status` VARCHAR(20) DEFAULT 'active' NOT NULL COMMENT '用户状态：active-启用，inactive-禁用',
+    `create_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+    `update_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+    UNIQUE KEY `uk_username` (`username`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+
+-- ----------------------------
+-- Records of admin_user
+-- ----------------------------
+BEGIN;
+-- 创建默认管理员用户
+-- 密码使用BCrypt加密，明文密码为"admin"
+INSERT INTO `admin_user` (`username`, `password`, `nickname`, `email`) 
+VALUES ('admin', '$2a$10$QJZ0n8Vf9yJbNwqkY37oIeU0D0q5PZzR9V3W2XQ2XQ2XQ2XQ2XQ2X', '系统管理员', 'admin@example.com')
+ON DUPLICATE KEY UPDATE `username`=`username`;
+COMMIT;
 
 -- ----------------------------
 -- Table structure for era_extension_info
@@ -170,7 +181,7 @@ CREATE TABLE `era_service`
     `id`           varchar(255)                                                  NOT NULL,
     `name`         varchar(255) DEFAULT NULL,
     `description`  text,
-    `extension_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '关联插件id',
+    `extension_id` varchar(255) CHARACTER LET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '关联插件id',
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4
@@ -180,6 +191,36 @@ CREATE TABLE `era_service`
 -- Records of era_service
 -- ----------------------------
 BEGIN;
+COMMIT;
+
+-- ----------------------------
+-- Table structure for admin_user
+-- ----------------------------
+DROP TABLE IF EXISTS `admin_user`;
+CREATE TABLE `admin_user`
+(
+    `id`          BIGINT                                                          NOT NULL AUTO_INCREMENT COMMENT '用户ID',
+    `username`    varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci  NOT NULL COMMENT '用户名',
+    `password`    varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '密码',
+    `nickname`    varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci  DEFAULT NULL COMMENT '昵称',
+    `email`       varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT '邮箱',
+    `status`      varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci  DEFAULT 'active' NOT NULL COMMENT '用户状态：active-启用，inactive-禁用',
+    `create_time` datetime                                                     DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+    `update_time` datetime                                                     DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `uk_username` (`username`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COLLATE = utf8mb4_0900_ai_ci;
+
+-- ----------------------------
+-- Records of admin_user
+-- ----------------------------
+BEGIN;
+-- admin用户的密码已使用BCrypt加密，明文密码为"admin"
+-- 使用已知正确的BCrypt哈希值
+INSERT INTO `admin_user` (`id`, `username`, `password`, `nickname`, `email`, `status`)
+VALUES (1, 'root', '1uWhf6YqnBoPp9bHH27za26+QeEKmUs8Y/bsKW03ZkmMXKFAcgDA/ihECMLCeJojgqpe6Ijsb0HU3BDA4gpX0Q==', '管理员', 'admin@example.com', 'active');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;

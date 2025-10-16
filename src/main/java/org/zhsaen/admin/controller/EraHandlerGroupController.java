@@ -1,17 +1,14 @@
-package cn.tineaine.receptionistservice.controller;
+package org.zhsaen.admin.controller;
 
 
-import cn.tineaine.receptionistservice.entity.EraHandlerGroup;
-import cn.tineaine.receptionistservice.entity.Response;
-import cn.tineaine.receptionistservice.service.EraHandlerGroupService;
+import org.zhsaen.admin.entity.EraHandlerGroup;
+import org.zhsaen.admin.entity.Response;
+import org.zhsaen.admin.service.EraHandlerGroupService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
-
-import java.io.Serializable;
-import java.util.List;
 
 /**
  * 表控制层

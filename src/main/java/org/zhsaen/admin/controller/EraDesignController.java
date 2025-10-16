@@ -1,8 +1,8 @@
-package cn.tineaine.receptionistservice.controller;
+package org.zhsaen.admin.controller;
 
-import cn.tineaine.receptionistservice.entity.EraExtension;
-import cn.tineaine.receptionistservice.entity.Response;
-import cn.tineaine.receptionistservice.service.EraDesignService;
+import org.zhsaen.admin.entity.EraExtension;
+import org.zhsaen.admin.entity.Response;
+import org.zhsaen.admin.service.EraDesignService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 

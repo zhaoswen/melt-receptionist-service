@@ -1,14 +1,14 @@
-package cn.tineaine.receptionistservice.service.impl;
+package org.zhsaen.admin.service.impl;
 
-import cn.tineaine.receptionistservice.dao.EraExtensionInfoDao;
-import cn.tineaine.receptionistservice.dao.EraHandlerDao;
-import cn.tineaine.receptionistservice.dao.EraHandlerGroupDao;
-import cn.tineaine.receptionistservice.dao.EraHandlerParamDao;
-import cn.tineaine.receptionistservice.entity.EraExtension;
-import cn.tineaine.receptionistservice.entity.EraHandler;
-import cn.tineaine.receptionistservice.entity.EraHandlerGroup;
-import cn.tineaine.receptionistservice.entity.EraHandlerParam;
-import cn.tineaine.receptionistservice.service.EraDesignService;
+import org.zhsaen.admin.dao.EraExtensionInfoDao;
+import org.zhsaen.admin.dao.EraHandlerDao;
+import org.zhsaen.admin.dao.EraHandlerGroupDao;
+import org.zhsaen.admin.dao.EraHandlerParamDao;
+import org.zhsaen.admin.entity.EraExtension;
+import org.zhsaen.admin.entity.EraHandler;
+import org.zhsaen.admin.entity.EraHandlerGroup;
+import org.zhsaen.admin.entity.EraHandlerParam;
+import org.zhsaen.admin.service.EraDesignService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
