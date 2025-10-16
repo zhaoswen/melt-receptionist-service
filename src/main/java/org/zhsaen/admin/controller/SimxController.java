@@ -1,5 +1,8 @@
 package cn.tineaine.receptionistservice.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
@@ -15,6 +18,7 @@ import java.io.File;
 
 @RestController
 @RequestMapping("simx")
+@Tag(name = "Simx引擎", description = "Simx引擎相关接口")
 public class SimxController {
 
     // 注入ymal中的文件路径
@@ -22,7 +26,8 @@ public class SimxController {
     private String filePath;
 
     @GetMapping("getEngineRunner")
-    public ResponseEntity<Resource> getEngineRunner(@RequestParam String version) {
+    @Operation(summary = "获取引擎运行文件", description = "根据版本获取对应的引擎运行文件")
+    public ResponseEntity<Resource> getEngineRunner(@Parameter(description = "引擎版本") @RequestParam String version) {
         System.out.println("downloadFile" + filePath);
         // 转换为路径
         String enginePath;
