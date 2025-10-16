@@ -67,11 +67,8 @@ public class AdminUserServiceImpl implements AdminUserService {
 
     @Override
     public AdminUser getCurrentUser() {
-        if (StpUtil.isLogin()) {
             Integer userId = Integer.parseInt(StpUtil.getLoginIdAsString());
             return adminUserDao.selectById(userId);
-        }
-        return null;
     }
 
     @Override

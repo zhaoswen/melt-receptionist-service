@@ -63,9 +63,6 @@ public class AuthController {
     @GetMapping("/info")
     @Operation(summary = "获取当前用户信息", description = "获取当前登录用户的信息")
     public Response<AdminUser> getCurrentUserInfo() {
-        if (!StpUtil.isLogin()) {
-            return Response.error("用户未登录", 401);
-        }
         
         AdminUser user = adminUserService.getCurrentUser();
         if (user == null) {

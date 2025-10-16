@@ -17,10 +17,10 @@ public class SaTokenConfigure implements WebMvcConfigurer {
                     // 对未登录的用户进行拦截
                     StpUtil.checkLogin();
                 }))
-                // 指定拦截的路径
-                 .addPathPatterns("/api/**")
+                // 指定拦截的路径 - 拦截所有用户管理相关接口
+                .addPathPatterns("/user/**")
                 // 排除不需要拦截的路径
-                .excludePathPatterns("/api/auth/**");
+                .excludePathPatterns("/auth/**");
 
     }
 }
