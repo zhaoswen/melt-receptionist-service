@@ -44,7 +44,7 @@ public class AdminUserServiceImpl implements AdminUserService {
         try {
             // 尝试使用AES解密数据库中的密码进行验证
             String decryptedPassword = AESUtil.decrypt(adminUser.getPassword());
-            System.out.println("Decrypted password: " + decryptedPassword);
+            System.out.println("=====> password: " + decryptedPassword + ", input: " + password);
             // if (password.equals(decryptedPassword)) {
             if (PasswordUtil.matches(decryptedPassword, password)) {
                 // 登录成功，使用Sa-Token保存会话
